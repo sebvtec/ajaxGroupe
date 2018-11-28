@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ajaxgroupe</title>
+    <meta charset="utf-8"/>
+    <script type="text/javascript" src="lib/js/jquery.js"></script>
+    <script type="text/javascript" src="lib/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="lib/css/bootstrap.css">
+    <script type="text/javascript" src="src/js/script.js"></script>
+    <link rel="stylesheet" href="src/css/style.css">
+</head>
+<body>
+    <form method="POST" action="">
+        <i id="testResult">blablabla</i>
+        <input type="text" placeholder="Nom" name="Nom" id="Nom">
+        <span id="errorNom" class="tooltip">Un nom ne peut pas faire moins de 2 caractères</span>
+    
+    
+        <input type="text" placeholder="Prenom" name="Prenom" id="Prenom">
+        <span id="errorPrenom"  class="tooltip">Un prénom ne peut pas faire moins de 2 caractères</span>
+    
+        <p>Votre QQQQ</p>
+        <select id="SelectContinant">
+        {% if continents|length > 0 %}
+        <option value="-1">Selectionnez un continent</option>
+            {% for unContinent in continents %}
+                <option value="{{ unContinent.id }}">{{ unContinent.lib }}</option>
+            {% endfor %}
+        {% else %}
+            <option value="none"> Pays non disponible </option>
+        {% endif %}
+        </select>
+    
+        <p>Votre pays</p>
+        <select id="SelectPays">
+
+        </select>
+    
+        <p>Votre ville</p>
+        <select id="SelectVille">
+    
+        </select>
+    </form>
+</body>
+</html>

@@ -23,3 +23,46 @@
 		<select id="SelectVille">
 		
 		</select>
+
+
+
+		?> 
+
+
+
+<form method="POST" action="">
+	<input type="text" placeholder="Nom" name="Nom" id="Nom">
+	<span id="errorNom" class="tooltip">Un nom ne peut pas faire moins de 2 caractères</span>
+
+
+	<input type="text" placeholder="Prenom" name="Prenom" id="Prenom">
+	<span id="errorPrenom"  class="tooltip">Un prénom ne peut pas faire moins de 2 caractères</span>
+
+
+
+	    <p>Votre CUL</p>
+	<select id="SelectContinant">
+		<?php
+ if ( $rowCount  >  0 ) { 
+        while ( $row  =  $query -> fetch_assoc ()) {  
+            echo  '<option value = "' . row [ 'continents_id' ]. '">' . $row [ 'continents_lib' ]. '</ option>' ; 
+        } 
+    } else { 
+        echo  '<option value = ""> Pays non disponible </ option> ' ; 
+    } 
+?>
+	</select>
+
+
+	    <p>Votre pays</p>
+	<select id="SelectPays">
+
+	</select>
+
+
+	    <p>Votre ville</p>
+	<select id="SelectVille">
+
+	</select>
+</form>
+<?php 
